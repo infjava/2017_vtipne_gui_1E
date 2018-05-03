@@ -10,6 +10,8 @@ import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
@@ -63,6 +65,8 @@ class VtipneOkno {
 
         tlacidla.add(anoButton);
         tlacidla.add(nieButton);
+        
+        nieButton.setFocusable(false);
 
         this.okno.add(tlacidla, BorderLayout.SOUTH);
 
