@@ -16,6 +16,8 @@ public class VtipnaAplikacia {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        VtipneOkno okno = new VtipneOkno();
+        okno.zobraz();
     }
     
 }
