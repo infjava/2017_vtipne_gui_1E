@@ -7,9 +7,12 @@ package vtipnaaplikacia;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -23,28 +26,35 @@ class VtipneOkno {
     public VtipneOkno() {
         this.okno = new JFrame("Otazka");
         this.okno.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        
+
         this.okno.setLayout(new BorderLayout());
-        
+
         this.okno.add(new JLabel("Spravis skusku z Informatiky?"), BorderLayout.CENTER);
-        
+
         JPanel tlacidla = new JPanel();
         tlacidla.setLayout(new GridLayout(1, 2));
-        
+
         final JButton anoButton = new JButton("Ano");
         final JButton nieButton = new JButton("Nie");
-        
+
         anoButton.addActionListener(new AnoListener());
-        
+
         tlacidla.add(anoButton);
         tlacidla.add(nieButton);
-        
+
         this.okno.add(tlacidla, BorderLayout.SOUTH);
-        
+
         this.okno.pack();
     }
 
     void zobraz() {
         this.okno.setVisible(true);
+    }
+
+    private class AnoListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(null, "Drz sa na skuske!");
+        }
     }
 }
