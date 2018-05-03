@@ -6,6 +6,7 @@
 package vtipnaaplikacia;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -52,10 +53,9 @@ class VtipneOkno {
         nieButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                tlacidla.removeAll();
-                
-                tlacidla.add(nieButton);
-                tlacidla.add(anoButton);
+                Component prvy = tlacidla.getComponent(0);
+                tlacidla.remove(prvy);
+                tlacidla.add(prvy);
                 
                 VtipneOkno.this.okno.revalidate();
             }
