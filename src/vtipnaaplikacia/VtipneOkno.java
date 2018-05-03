@@ -39,6 +39,12 @@ class VtipneOkno {
         
         anoButton.addActionListener((ActionEvent e) -> {
             JOptionPane.showMessageDialog(null, "Drz sa na skuske!");
+            System.exit(0);
+        });
+        
+        nieButton.addActionListener((ActionEvent e) -> {
+            JOptionPane.showMessageDialog(null, "To nemyslis vazne!");
+            System.exit(0);
         });
 
         tlacidla.add(anoButton);
