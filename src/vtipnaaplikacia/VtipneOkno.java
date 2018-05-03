@@ -9,6 +9,8 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -45,6 +47,18 @@ class VtipneOkno {
         nieButton.addActionListener((ActionEvent e) -> {
             JOptionPane.showMessageDialog(null, "To nemyslis vazne!");
             System.exit(0);
+        });
+        
+        nieButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                tlacidla.removeAll();
+                
+                tlacidla.add(nieButton);
+                tlacidla.add(anoButton);
+                
+                VtipneOkno.this.okno.revalidate();
+            }
         });
 
         tlacidla.add(anoButton);
