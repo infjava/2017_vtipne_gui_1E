@@ -31,8 +31,13 @@ class VtipneOkno {
         JPanel tlacidla = new JPanel();
         tlacidla.setLayout(new GridLayout(1, 2));
         
-        tlacidla.add(new JButton("Ano"));
-        tlacidla.add(new JButton("Nie"));
+        final JButton anoButton = new JButton("Ano");
+        final JButton nieButton = new JButton("Nie");
+        
+        anoButton.addActionListener(new AnoListener());
+        
+        tlacidla.add(anoButton);
+        tlacidla.add(nieButton);
         
         this.okno.add(tlacidla, BorderLayout.SOUTH);
         
