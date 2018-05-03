@@ -37,7 +37,12 @@ class VtipneOkno {
         final JButton anoButton = new JButton("Ano");
         final JButton nieButton = new JButton("Nie");
 
-        anoButton.addActionListener(new AnoListener());
+        anoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "Drz sa na skuske!");
+            }
+        });
 
         tlacidla.add(anoButton);
         tlacidla.add(nieButton);
@@ -49,12 +54,5 @@ class VtipneOkno {
 
     void zobraz() {
         this.okno.setVisible(true);
-    }
-
-    private class AnoListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Drz sa na skuske!");
-        }
     }
 }
