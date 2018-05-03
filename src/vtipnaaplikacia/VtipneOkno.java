@@ -14,6 +14,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -69,6 +71,13 @@ class VtipneOkno {
         nieButton.setFocusable(false);
 
         this.okno.add(tlacidla, BorderLayout.SOUTH);
+        
+        this.okno.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                JOptionPane.showMessageDialog(null, "Nevyhybaj sa odpovedi na otazku!");
+            }
+        });
 
         this.okno.pack();
     }
